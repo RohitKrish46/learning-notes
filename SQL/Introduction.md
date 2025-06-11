@@ -1,5 +1,5 @@
 
-# Fundamentals:
+# Fundamentals
 
 ## What is a Database?
 A database is a structured container for storing, organizing, and managing large volumes of data. Unlike simple file storage (e.g., folders or spreadsheets), databases are designed to efficiently handle vast datasets, enabling easy access, search, and management. They offer enhanced security compared to traditional storage methods, making them a safer choice for storing critical and sensitive information.
