@@ -43,7 +43,7 @@ FROM customers;
 
 ---
 
-## 🔹 UPDATE
+## UPDATE
 
 Used to modify existing rows in a table.
 
@@ -58,7 +58,7 @@ WHERE condition;
 
 ---
 
-## 🔹 DELETE
+## DELETE
 
 Used to remove rows from a table.
 
@@ -79,14 +79,4 @@ TRUNCATE TABLE table_name;
 * `TRUNCATE` resets identity columns (if any) and does not fire `ON DELETE` triggers.
 
 ---
-
-###  Summary
-
-| Command  | Purpose                | Use with WHERE? | Supports Rollback |
-| -------- | ---------------------- | --------------- | ----------------- |
-| INSERT   | Add new rows           | ❌ (optional)    | ✅                 |
-| UPDATE   | Modify existing rows   | ✅ (recommended) | ✅                 |
-| DELETE   | Remove specific rows   | ✅ (recommended) | ✅                 |
-| TRUNCATE | Remove all rows (fast) | ❌               | ❌ *(in many DBs)* |
-
 
