@@ -118,46 +118,45 @@ Kubernetes is a **container orchestration platform** specifically designed to ad
 
 ### Kubernetes Internals
 
-**Master Node (Control Plane)**: The master node is the brain of the Kubernetes cluster. It oversees the system, manages workloads, and ensures everything runs as expected. Think of it as the manager in a factory that delegates tasks and monitors operations.
+1. **Master Node (Control Plane)**: The master node is the brain of the Kubernetes cluster. It oversees the system, manages workloads, and ensures everything runs as expected. Think of it as the manager in a factory that delegates tasks and monitors operations.
+
+2. **Resource Manager**: The resource manager in Kubernetes ensures that cluster resources like CPU, memory, and storage are allocated efficiently. It’s like a warehouse manager who ensures that raw materials (resources) are distributed to the right production lines (nodes).
 
 
-**Resource Manager**: The resource manager in Kubernetes ensures that cluster resources like CPU, memory, and storage are allocated efficiently. It’s like a warehouse manager who ensures that raw materials (resources) are distributed to the right production lines (nodes).
+3. **API Server (For user comm)**: Users interact with Kubernetes through the API Server. It’s like the receptionist at an office—you send requests (like deploying an app), and the API Server routes them to the appropriate components in the cluster.
 
 
-**API Server (For user comm)**: Users interact with Kubernetes through the API Server. It’s like the receptionist at an office—you send requests (like deploying an app), and the API Server routes them to the appropriate components in the cluster.
+4. **Database (etcd)**: `etcd` is Kubernetes' central database where all cluster data is stored, including the current state of the system and desired configurations. Imagine it as a library catalog—every time you check out or return a book, the catalog is updated to reflect the changes.
 
 
-**Database (etcd)**: `etcd` is Kubernetes' central database where all cluster data is stored, including the current state of the system and desired configurations. Imagine it as a library catalog—every time you check out or return a book, the catalog is updated to reflect the changes.
+5. **Worker Node**: Worker nodes are the muscle of the cluster. They run your applications and handle the tasks assigned by the master node. Think of them as factory workers who execute tasks given by the manager (master node).
 
 
-**Worker Node**: Worker nodes are the muscle of the cluster. They run your applications and handle the tasks assigned by the master node. Think of them as factory workers who execute tasks given by the manager (master node).
+6. **Kubelet**: The kubelet is an agent running on each worker node that ensures containers (your applications) are running as expected. It’s like a shift supervisor in a factory who ensures each machine is operating correctly.
 
 
-**Kubelet**: The kubelet is an agent running on each worker node that ensures containers (your applications) are running as expected. It’s like a shift supervisor in a factory who ensures each machine is operating correctly.
+7. **Kube-Proxy**: The kube-proxy manages network traffic for pods, ensuring they can communicate with each other and the outside world. It’s like a traffic cop at a busy intersection, directing cars (data packets) to the right destinations.
 
 
-**Kube-Proxy**: The kube-proxy manages network traffic for pods, ensuring they can communicate with each other and the outside world. It’s like a traffic cop at a busy intersection, directing cars (data packets) to the right destinations.
+8. **Pods**: A pod is the smallest deployable unit in Kubernetes and typically wraps one or more containers. Think of it as a container ship holding one or more goods (containers) and transporting them across a logistics network.
 
 
-**Pods**: A pod is the smallest deployable unit in Kubernetes and typically wraps one or more containers. Think of it as a container ship holding one or more goods (containers) and transporting them across a logistics network.
+9. **SharedDB (Volumes)**: Volumes are shared storage spaces in Kubernetes that allow pods to save and share data. It’s like a shared locker room where workers (pods) can access tools or leave notes for each other.
 
 
-**SharedDB (Volumes)**: Volumes are shared storage spaces in Kubernetes that allow pods to save and share data. It’s like a shared locker room where workers (pods) can access tools or leave notes for each other.
+10. **Kube-Manifest (YAML)**: Kube manifests are configuration files written in YAML that define what you want Kubernetes to do, such as deploying an app or creating a service. Think of it as the blueprint for building a house—Kubernetes reads it to know exactly what to construct.
 
 
-**Kube-Manifest (YAML)**: Kube manifests are configuration files written in YAML that define what you want Kubernetes to do, such as deploying an app or creating a service. Think of it as the blueprint for building a house—Kubernetes reads it to know exactly what to construct.
+11. **Service**: A service in Kubernetes provides a stable network endpoint for accessing a set of pods. Even if the pods are replaced or moved, the service ensures they can still be reached. It’s like a restaurant hotline—no matter who answers the phone (which server pod), your order is taken.
 
 
-**Service**: A service in Kubernetes provides a stable network endpoint for accessing a set of pods. Even if the pods are replaced or moved, the service ensures they can still be reached. It’s like a restaurant hotline—no matter who answers the phone (which server pod), your order is taken.
+12. **Namespace**: Namespaces are virtual clusters within a Kubernetes cluster that help organize and isolate resources. It’s like different departments in a large office building—HR, Sales, and IT each work in separate areas but share the same infrastructure.
 
 
-**Namespace**: Namespaces are virtual clusters within a Kubernetes cluster that help organize and isolate resources. It’s like different departments in a large office building—HR, Sales, and IT each work in separate areas but share the same infrastructure.
+13. **Scheduler**: Decides which worker node will run a new pod based on resource availability. It's like a dispatcher allocating tasks to the most available worker.
 
 
-**Scheduler**: Decides which worker node will run a new pod based on resource availability. It's like a dispatcher allocating tasks to the most available worker.
-
-
-**ReplicaSets**: Ensure that a specified number of identical pods are always running. It’s like a backup generator ensuring there’s always power even if one generator fails.
+14. **ReplicaSets**: Ensure that a specified number of identical pods are always running. It’s like a backup generator ensuring there’s always power even if one generator fails.
 
 
 ### Real-Life Analogy: Distributed Computing Without and With Kubernetes
@@ -168,14 +167,14 @@ Kubernetes is a **container orchestration platform** specifically designed to ad
 - With Kubernetes:  
    Now, imagine a central management system that monitors every branch in real time, restocks ingredients automatically, hires temporary staff when someone quits, and redirects customers to the least crowded branches. That’s Kubernetes for your distributed computing!
 
----
+
 
 ## Summary
 - Distributed Computing Benefits: Scalability, fault tolerance, improved performance, cost efficiency, and flexibility.  
 - Challenges: Resource management, scaling, communication, fault handling, load balancing, deployment, and monitoring.  
 - Kubernetes: A robust solution that automates, simplifies, and optimizes the management of distributed systems, making it the backbone for modern applications, especially in MLOps.
 
----
+
 
 ## Connecting Microservices to Docker and Kubernetes
 
@@ -196,7 +195,6 @@ Kubernetes acts like the food court manager who ensures all stalls (containers) 
 2. Networking: The manager ensures customers can easily navigate the food court. Similarly, Kubernetes handles communication between containers and ensures users can access the services.  
 3. Load Balancing: Kubernetes distributes traffic among multiple instances of a service (e.g., multiple replicas of the Model Serving Service).  
 
----
 
 ### Advantages of Microservices for ML in Docker-Kubernetes
 
@@ -204,7 +202,7 @@ Kubernetes acts like the food court manager who ensures all stalls (containers) 
 2. Resilience: If one microservice fails (e.g., the **Training Service** crashes), the others keep running.  
 3. Flexibility: You can use different languages or tools for each service. For example, the **Model Serving Service** might run Python with TensorFlow, while the **UI Service** might use JavaScript with React.
 
----
+
 
 Summary
 - **Microservices** break ML workflows into smaller, independent services that can be deployed, scaled, and updated separately.  
