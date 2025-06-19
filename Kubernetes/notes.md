@@ -1,31 +1,31 @@
 ## Distributed Computing
->>Distributed computing refers to a system where multiple computers (or nodes) work together to solve a large problem or process data collaboratively. The tasks are divided among the nodes, enabling parallel processing for faster and more efficient computation.
+Distributed computing refers to a system where multiple computers (or nodes) work together to solve a large problem or process data collaboratively. The tasks are divided among the nodes, enabling parallel processing for faster and more efficient computation.
 
 ### Components of Distributed Computing
 
->> Cluster: A cluster is a group of interconnected computers or servers that work together as a single system. Each computer in the cluster is called a node, and they collaborate to share workloads, provide redundancy, and improve performance.
+**Cluster**: A cluster is a group of interconnected computers or servers that work together as a single system. Each computer in the cluster is called a node, and they collaborate to share workloads, provide redundancy, and improve performance.
 
->> Lead-Node Server: The lead-node (or master node) in a distributed system is responsible for managing the cluster. It coordinates tasks like assigning workloads to worker nodes, monitoring their health, and ensuring everything runs smoothly.
+**Lead-Node Server**: The lead-node (or master node) in a distributed system is responsible for managing the cluster. It coordinates tasks like assigning workloads to worker nodes, monitoring their health, and ensuring everything runs smoothly.
 
->> Communication: Communication in distributed computing refers to how nodes in the cluster exchange data and instructions. It happens through network protocols and is crucial for synchronization, task distribution, and data sharing among nodes.
+**Communication**: Communication in distributed computing refers to how nodes in the cluster exchange data and instructions. It happens through network protocols and is crucial for synchronization, task distribution, and data sharing among nodes.
 
->> Concurrency (Speed, Fault Tolerance): Concurrency in distributed systems allows multiple tasks to run simultaneously across nodes. This boosts speed and ensures fault tolerance—if one node fails, the workload is shifted to others, preventing disruptions.
+**Concurrency (Speed, Fault Tolerance)**: Concurrency in distributed systems allows multiple tasks to run simultaneously across nodes. This boosts speed and ensures fault tolerance—if one node fails, the workload is shifted to others, preventing disruptions.
 
->> Comparison with Apache Spark Internally (MapReduce): Apache Spark and Kubernetes both enable distributed computing but operate differently. Spark uses a specialized model called **MapReduce**, where tasks are divided into "map" (processing) and "reduce" (aggregation) steps. Kubernetes, on the other hand, provides a general-purpose framework for orchestrating containerized workloads and does not impose a specific computation model.
+**Comparison with Apache Spark Internally (MapReduce)**: Apache Spark and Kubernetes both enable distributed computing but operate differently. Spark uses a specialized model called **MapReduce**, where tasks are divided into "map" (processing) and "reduce" (aggregation) steps. Kubernetes, on the other hand, provides a general-purpose framework for orchestrating containerized workloads and does not impose a specific computation model.
 
 
 
 ### Benefits of Distributed Computing
 
->> Scalability: Distributed computing allows you to divide tasks among multiple machines, enabling the system to handle larger workloads. For example, in ML, if training a model on a single machine takes 10 hours, distributing the work across 10 machines can reduce the time significantly.
+**Scalability**: Distributed computing allows you to divide tasks among multiple machines, enabling the system to handle larger workloads. For example, in ML, if training a model on a single machine takes 10 hours, distributing the work across 10 machines can reduce the time significantly.
 
->> Fault Tolerance: If one machine fails, the distributed system can redistribute the tasks to other machines, ensuring the system keeps running. Think of it as a power grid—if one station goes offline, others take over to maintain the electricity supply.
+**Fault Tolerance**: If one machine fails, the distributed system can redistribute the tasks to other machines, ensuring the system keeps running. Think of it as a power grid—if one station goes offline, others take over to maintain the electricity supply.
 
->> Improved Performance: Tasks are processed in parallel, reducing overall latency and making applications faster. For example, web applications can serve more users simultaneously by running requests on multiple servers.
+**Improved Performance**: Tasks are processed in parallel, reducing overall latency and making applications faster. For example, web applications can serve more users simultaneously by running requests on multiple servers.
 
->> Cost Efficiency: Instead of investing in expensive, high-performance hardware, you can use multiple cheaper machines to achieve the same (or better) results.
+**Cost Efficiency**: Instead of investing in expensive, high-performance hardware, you can use multiple cheaper machines to achieve the same (or better) results.
 
->> Flexibility: You can use a mix of different types of machines, hardware, or even cloud providers. This makes it easier to build and manage systems that adapt to changing needs.
+**Flexibility**: You can use a mix of different types of machines, hardware, or even cloud providers. This makes it easier to build and manage systems that adapt to changing needs.
 
 
 
@@ -72,19 +72,19 @@ This separation makes it easy to scale just the **Model Serving Service** when t
 
 ### Challenges of Distributed Computing
 
->> Resource Management: Allocating resources like CPU, memory, and storage across machines is complex. How do you ensure that no machine is overloaded while others are idle?
+**Resource Management**: Allocating resources like CPU, memory, and storage across machines is complex. How do you ensure that no machine is overloaded while others are idle?
 
->> Scaling: Adding or removing machines from the system (scaling up or down) requires significant effort. For instance, if traffic spikes suddenly, how do you add new machines and ensure they integrate seamlessly?
+**Scaling**: Adding or removing machines from the system (scaling up or down) requires significant effort. For instance, if traffic spikes suddenly, how do you add new machines and ensure they integrate seamlessly?
 
->> Communication and Networking: Machines in a distributed system need to communicate constantly. Network failures, latencies, or configuration errors can cause significant issues.
+**Communication and Networking**: Machines in a distributed system need to communicate constantly. Network failures, latencies, or configuration errors can cause significant issues.
 
->> Fault Handling: Ensuring fault tolerance requires mechanisms to detect failures, recover lost data, and reroute tasks, all while minimizing downtime.
+**Fault Handling**: Ensuring fault tolerance requires mechanisms to detect failures, recover lost data, and reroute tasks, all while minimizing downtime.
 
->> Load Balancing: Distributing tasks evenly across machines is non-trivial. Overloading one machine while others remain underutilized can degrade system performance.
+**Load Balancing**: Distributing tasks evenly across machines is non-trivial. Overloading one machine while others remain underutilized can degrade system performance.
 
->> Configuration and Deployment: Managing the deployment of software across multiple machines can be error-prone. Imagine manually configuring hundreds of machines—it's a logistical nightmare.
+**Configuration and Deployment**: Managing the deployment of software across multiple machines can be error-prone. Imagine manually configuring hundreds of machines—it's a logistical nightmare.
 
->> Monitoring and Debugging: Identifying issues in a distributed system is much harder than in a single system. Logs, metrics, and performance data are spread across multiple machines.
+**Monitoring and Debugging**: Identifying issues in a distributed system is much harder than in a single system. Logs, metrics, and performance data are spread across multiple machines.
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
