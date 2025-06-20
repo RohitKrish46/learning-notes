@@ -86,7 +86,6 @@ This separation makes it easy to scale just the **Model Serving Service** when t
 
 **Monitoring and Debugging**: Identifying issues in a distributed system is much harder than in a single system. Logs, metrics, and performance data are spread across multiple machines.
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ### How Kubernetes Addresses These Challenges
 
@@ -112,8 +111,6 @@ Kubernetes is a **container orchestration platform** specifically designed to ad
 
 7. **Centralized Monitoring and Debugging**  
    Kubernetes integrates with monitoring tools like Prometheus and logging tools like ELK Stack, providing a unified view of the system.
-
----
 
 
 ### Kubernetes Internals
