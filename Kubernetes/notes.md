@@ -144,7 +144,7 @@ Kubernetes is a **container orchestration platform** specifically designed to ad
 10. **Kube-Manifest (YAML)**: Kube manifests are configuration files written in YAML that define what you want Kubernetes to do, such as deploying an app or creating a service. Think of it as the blueprint for building a house—Kubernetes reads it to know exactly what to construct.
 
 
-11. **Service**: A service in Kubernetes provides a stable network endpoint for accessing a set of pods. Even if the pods are replaced or moved, the service ensures they can still be reached. It’s like a restaurant hotline—no matter who answers the phone (which server pod), your order is taken.
+11. **Service**: A Kubernetes Service provides you with a stable endpoint which can be used to direct traffic to the desired Pods even as the exact underlying Pods change due to updates, scaling, and failures. It’s like a restaurant hotline, no matter who answers the phone (which server pod), your order is taken.
 
 
 12. **Namespace**: Namespaces are virtual clusters within a Kubernetes cluster that help organize and isolate resources. It’s like different departments in a large office building—HR, Sales, and IT each work in separate areas but share the same infrastructure.
