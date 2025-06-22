@@ -163,7 +163,7 @@ Kubernetes is a **container orchestration platform** specifically designed to ad
 14. **ReplicaSets**: Ensure that a specified number of identical pods are always running. It’s like a backup generator ensuring there’s always power even if one generator fails.
 
 
-15.**Ingress**: While a Service allows us to expose applications behind a stable endpoint, the endpoint is only available to internal cluster traffic. If we wanted to expose our application to traffic external to our cluster, we need to define an Ingress object. 
+15. **Ingress**: While a Service allows us to expose applications behind a stable endpoint, the endpoint is only available to internal cluster traffic. If we wanted to expose our application to traffic external to our cluster, we need to define an Ingress object. 
 
 
 ### When should you not use Kubernetes?
