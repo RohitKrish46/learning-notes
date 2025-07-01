@@ -1,8 +1,3 @@
-Here's your content converted into clean, organized notes in `.md` (Markdown) format for easy future reading and reference.
-
----
-
-````markdown
 # Row-Level Functions in SQL
 
 ## What is a Function in SQL?
