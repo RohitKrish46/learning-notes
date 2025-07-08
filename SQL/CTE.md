@@ -1,6 +1,3 @@
-Here is your content converted into markdown `.md` format for easy future reference:
-
-````md
 # Common Table Expression (CTE)
 
 CTE is a named result set (temporary table) that can be used multiple times within your query to simplify and organize complex queries.
@@ -44,7 +41,7 @@ CTE is a named result set (temporary table) that can be used multiple times with
   SELECT ...
   FROM CTE_name
   WHERE ...
-```
+  ```
 
 > Note: `ORDER BY` clause is not allowed inside a CTE.
 
