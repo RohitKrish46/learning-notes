@@ -15,11 +15,8 @@ Example
     
     ### **Data drift vs. Concept drift**
     
-    <aside>
-    💡
-    
+    <aside>    
     **TL;DR**. Data drift is a change in the input data. Concept drift is a change in input-output relationships. Both often happen simultaneously. 
-    
     </aside>
     
     - While data drift describes changes in the data distribution, [**concept drift**](https://www.evidentlyai.com/ml-in-production/concept-drift) relates to changes in the relationships between input and target variables. Basically, concept drift means that whatever your model is predicting – it is changing.
@@ -35,10 +32,7 @@ Example
     ### **Data drift vs. Prediction drift**
     
     <aside>
-    💡
-    
     **TL;DR.** Data drift is a change in model inputs, while prediction drift is a change in the model outputs.
-    
     </aside>
     
     - When discussing data drift, we typically refer to the input features that go into the model. Prediction drift, in comparison, is the distribution shift in the model outputs.
@@ -52,10 +46,7 @@ Example
     ### **Data drift vs. Training-serving skew**
     
     <aside>
-    💡
-    
     **TL;DR.** Training-serving skew is a mismatch between training and production data. Data drift is a shift in the distribution of production data inputs over time.
-    
     </aside>
     
     - **Training-serving skew** is a situation where there's a mismatch between the data the model was trained on and the data it encounters in production.
@@ -67,10 +58,7 @@ Example
     ### **Data drift vs. Data quality**
     
     <aside>
-    💡
-    
     **TL;DR.** Data drift refers to the change in data distributions in otherwise valid data. Data quality issues refer to the data bugs, inconsistencies, and errors.
-    
     </aside>
     
     - Broadly speaking, data drift can include all sorts of changes and anomalies in data.
@@ -84,10 +72,7 @@ Example
     ### **Data drift vs. Outlier detection**
     
     <aside>
-    💡
-    
     **TL;DR.** Data drift refers to the change in the overall data distributions. Outlier detection is focused on identifying individual anomalies in the input data.
-    
     </aside>
     
     - **Drift detection** refers to the "global" data distributions in the whole dataset. You want to detect whether the data has shifted significantly compared to the past period or model training. The goal is to decide if you can trust the model still performs as expected and if the environment remains similar.
@@ -107,10 +92,8 @@ Data drift is an important concept in production machine learning for a few reas
 ### **Model maintenance**
 
 <aside>
-💡
 
 **TL;DR.** Machine learning models are not "set it and forget it" solutions. Data will shift with time, which requires a model monitoring and retraining process. 
-
 </aside>
 
 - You typically train ML models on specific datasets, expecting they'll perform well on unseen, real-world data. However, assuming that the data will remain static is often unrealistic.
@@ -122,10 +105,8 @@ Data drift is an important concept in production machine learning for a few reas
 ### **Feedback delay**
 
 <aside>
-💡
 
 **TL;DR.** Feedback delay is a time lag between model predictions and receiving feedback on those predictions. Monitoring input data distribution drift is a valuable proxy when ground truth labels are unavailable. 
-
 </aside>
 
 - Feedback delay can occur when there is a significant time gap between the model making a prediction and receiving feedback on the accuracy or correctness of that prediction.
@@ -138,10 +119,8 @@ Data drift is an important concept in production machine learning for a few reas
 ### Model Debugging
 
 <aside>
-💡
 
 **TL;DR.** Analyzing input data distribution drift helps explain and locate the reasons for model quality drops, as well as notice important changes in the modeled process.
-
 </aside>
 
 - Evaluating data drift is also a useful technique for model troubleshooting and debugging. If you observe a model quality drop through a direct metric like accuracy, your next step is investigating the underlying cause. This usually boils down to looking for changes in the input data.
@@ -246,28 +225,11 @@ Say you detected data drift in your input model features using your preferred me
     - **Impact**: The model may produce unreliable predictions for these outlier transactions, as they fall outside the range of data it was trained on. For example, it might incorrectly flag these high-value customers as likely to churn due to their unusual purchase amounts.
     - **Detection**: Using Evidently’s outlier detection tests, the company identifies these transactions as anomalies by applying statistical methods (e.g., z-scores or isolation forests) to the "order value" feature. The monitoring dashboard flags individual records with order values exceeding a threshold (e.g., 3 standard deviations from the mean) as outliers, allowing the company to handle them separately (e.g., via manual review or a fallback rule-based system).
 
----
-
-### Actions Taken by the Company
-
-- **Data Drift**: The company uses Evidently’s Data Drift Preset to monitor feature distributions weekly and sets up alerts for significant shifts. They plan to retrain the model with recent data including mobile app transactions to account for the shift in purchase channels.
-- **Concept Drift**: To address the changing churn behavior, the company collects new labeled data reflecting the competitor’s impact and retrains the model. They also implement periodic retraining (e.g., monthly) to adapt to gradual concept drift.
-- **Prediction Drift**: The company uses prediction drift as a proxy to trigger deeper investigation. When prediction drift is detected, they analyze feature importance to identify which inputs (e.g., time since last purchase) are driving the shift and cross-check with concept drift metrics.
-- **Training-Serving Skew**: The company updates the data pipeline to handle missing values consistently (e.g., by imputing them) and retrains the model on a dataset that includes incomplete profiles to better reflect production conditions.
-- **Outlier Detection**: For outlier transactions, the company implements a fallback rule-based system (e.g., flagging bulk buyers as low-risk for churn) and excludes these records from model predictions until sufficient data is collected for retraining.
-
----
 
 ### Summary
-
-This example shows how a single churn prediction model can encounter multiple issues in production:
 
 - **Data Drift**: Shift in purchase channel and order value distributions due to the mobile app.
 - **Concept Drift**: Changed relationship between inactivity and churn due to a competitor.
 - **Prediction Drift**: Shift in predicted churn probabilities reflecting input and target changes.
 - **Training-Serving Skew**: Mismatch due to missing values in production data.
 - **Outlier Detection**: Unusual bulk purchases flagged as anomalies.
-
-Using tools like Evidently AI, the company can detect these issues through statistical tests, visual dashboards, and automated monitoring, enabling proactive responses like retraining, pipeline updates, or fallback strategies.
-
-If you’d like, I can provide a code snippet using Evidently AI to detect these issues or dive deeper into any specific aspect!
