@@ -15,7 +15,7 @@ Example
     
     ### **Data drift vs. Concept drift**
        
-    > **TL;DR**. Data drift is a change in the input data. Concept drift is a change in input-output relationships. Both often happen simultaneously. 
+    > **TLDR** Data drift is a change in the input data. Concept drift is a change in input-output relationships. Both often happen simultaneously. 
     
     - While data drift describes changes in the data distribution, [**concept drift**](https://www.evidentlyai.com/ml-in-production/concept-drift) relates to changes in the relationships between input and target variables. Basically, concept drift means that whatever your model is predicting – it is changing.
     - **Data drift** might be a symptom of concept drift, and both often co-occur. However, it is not a must.
