@@ -14,10 +14,8 @@ Example
 - The training data didn't have enough online sales information, so the model didn't perform as well for this segment. But it didn't matter much because online sales were a small part of their business. With the surge in online shopping, the quality of the model's forecasts has significantly dropped, affecting their ability to manage inventory effectively. This shift in sales channels, from predominantly in-store to largely online, is an example of data drift.
     
     ### **Data drift vs. Concept drift**
-    
-    <aside>    
-    **TL;DR**. Data drift is a change in the input data. Concept drift is a change in input-output relationships. Both often happen simultaneously. 
-    </aside>
+       
+    > **TLDR** Data drift is a change in the input data. Concept drift is a change in input-output relationships. Both often happen simultaneously. 
     
     - While data drift describes changes in the data distribution, [**concept drift**](https://www.evidentlyai.com/ml-in-production/concept-drift) relates to changes in the relationships between input and target variables. Basically, concept drift means that whatever your model is predicting – it is changing.
     - **Data drift** might be a symptom of concept drift, and both often co-occur. However, it is not a must.
@@ -30,11 +28,9 @@ Example
     - **The similarity:** Both data drift and concept drift can result in a decline in model quality and often coincide. In monitoring, data distribution drift can be a symptom of concept drift.
     
     ### **Data drift vs. Prediction drift**
-    
-    <aside>
-    **TL;DR.** Data drift is a change in model inputs, while prediction drift is a change in the model outputs.
-    </aside>
-    
+
+    > **TLDR** Data drift is a change in model inputs, while prediction drift is a change in the model outputs.
+
     - When discussing data drift, we typically refer to the input features that go into the model. Prediction drift, in comparison, is the distribution shift in the model outputs.
     - The shift in model outputs can signal changes in the environment or issues with the model quality. Often, this is the best proxy if you cannot directly measure the model performance.
     - Imagine that a fraud model starts to predict fraud more often. Or, a pricing model is now showing significantly lower prices. The change in the model predictions is a good reason to investigate.
@@ -44,11 +40,9 @@ Example
     - **The similarity**: both data and prediction drift are useful techniques for production model monitoring in the absence of ground truth and can signal the change in the model environment.
     
     ### **Data drift vs. Training-serving skew**
-    
-    <aside>
-    **TL;DR.** Training-serving skew is a mismatch between training and production data. Data drift is a shift in the distribution of production data inputs over time.
-    </aside>
-    
+
+  > **TLDR** Training-serving skew is a mismatch between training and production data. Data drift is a shift in the distribution of production data inputs over time.
+
     - **Training-serving skew** is a situation where there's a mismatch between the data the model was trained on and the data it encounters in production.
     - While environmental changes can contribute to this skew, it includes all possible discrepancies between the two datasets, including issues related to data preprocessing, feature engineering, and more. In addition, while data drift is usually a more gradual process you encounter during model operations, the training-serving skew refers to the immediate post-deployment window.
     - For example, you can encounter a training-serving skew when the features available in training are not possible to compute in production or come with a delay. The model won't be able to perform as well if it lacks important attributes it was trained to consider.
@@ -56,11 +50,9 @@ Example
     - **The similarity:** in both cases, we refer to the changes in the input data. You might use similar distribution comparison techniques to detect input data drift and training-serving skew by contrasting production data with training.
     
     ### **Data drift vs. Data quality**
-    
-    <aside>
-    **TL;DR.** Data drift refers to the change in data distributions in otherwise valid data. Data quality issues refer to the data bugs, inconsistencies, and errors.
-    </aside>
-    
+
+    > **TLDR** Data drift refers to the change in data distributions in otherwise valid data. Data quality issues refer to the data bugs, inconsistencies, and errors.
+
     - Broadly speaking, data drift can include all sorts of changes and anomalies in data.
     - **Data quality** issues refer to corrupted and incomplete data that might occur, for example, due to pipeline bugs or data entry errors.
     - **Data drift** refers to the change in distributions in otherwise correct and valid data that might occur due to environmental shifts.
@@ -70,11 +62,9 @@ Example
     - **The similarity**: Both data quality issues and data drift can lead to model quality drops, and both refer to the changes in the data. Data drift detection techniques can often expose data quality issues
     
     ### **Data drift vs. Outlier detection**
-    
-    <aside>
-    **TL;DR.** Data drift refers to the change in the overall data distributions. Outlier detection is focused on identifying individual anomalies in the input data.
-    </aside>
-    
+
+    > **TLDR** Data drift refers to the change in the overall data distributions. Outlier detection is focused on identifying individual anomalies in the input data.
+
     - **Drift detection** refers to the "global" data distributions in the whole dataset. You want to detect whether the data has shifted significantly compared to the past period or model training. The goal is to decide if you can trust the model still performs as expected and if the environment remains similar.
     - **Outlier detection** serves a different purpose. You want to identify individual objects in the data that look different from others. Often, the goal is then to act on the level of the respective objects. For example, you can ask a human expert to make a decision instead of the ML model or apply some business logic for this particular output, such as denying to make a prediction. This often happens when the cost of an individual error is high.
     - Data drift and outliers can exist independently. For example, you can observe dataset drift without outliers or individual outliers without data drift. You’d typically design detection methods differently: drift detectors should be robust to some outliers, while outlier detectors should be sensitive enough to catch individual anomalies.
@@ -90,11 +80,7 @@ Data drift is an important concept in production machine learning for a few reas
 3. Lastly, data drift analysis can help interpret and debug model quality drops and understand changes in the model environment.
 
 ### **Model maintenance**
-
-<aside>
-
-**TL;DR.** Machine learning models are not "set it and forget it" solutions. Data will shift with time, which requires a model monitoring and retraining process. 
-</aside>
+> **TLDR** Machine learning models are not "set it and forget it" solutions. Data will shift with time, which requires a model monitoring and retraining process. 
 
 - You typically train ML models on specific datasets, expecting they'll perform well on unseen, real-world data. However, assuming that the data will remain static is often unrealistic.
 - Even if there are no drastic changes and events like significant marketing campaigns or COVID-19, you can expect minor variations to accumulate over time. For example, in sales demand forecasting for hundreds or thousands of different items, you can always expect new products to appear and customer preferences and market conditions to evolve.
@@ -103,11 +89,7 @@ Data drift is an important concept in production machine learning for a few reas
 - Additionally, you need a robust **[model monitoring](https://www.evidentlyai.com/ml-in-production/model-monitoring) setup** to provide visibility into the current model quality and ensure you can intervene in time. This helps detect model quality issues in between updates or design the retraining process to happen on a trigger.
 
 ### **Feedback delay**
-
-<aside>
-
-**TL;DR.** Feedback delay is a time lag between model predictions and receiving feedback on those predictions. Monitoring input data distribution drift is a valuable proxy when ground truth labels are unavailable. 
-</aside>
+> **TLDR** Feedback delay is a time lag between model predictions and receiving feedback on those predictions. Monitoring input data distribution drift is a valuable proxy when ground truth labels are unavailable. 
 
 - Feedback delay can occur when there is a significant time gap between the model making a prediction and receiving feedback on the accuracy or correctness of that prediction.
 - For example, in a recommender system, there might be a delay between when the system recommends an item to a user and when we can determine if the user liked or interacted with that recommendation. This delay can vary from seconds (for some online interactions where users can immediately click or accept a recommended offer) to minutes, hours, or even days, depending on the nature of the task.
@@ -118,10 +100,7 @@ Data drift is an important concept in production machine learning for a few reas
 
 ### Model Debugging
 
-<aside>
-
-**TL;DR.** Analyzing input data distribution drift helps explain and locate the reasons for model quality drops, as well as notice important changes in the modeled process.
-</aside>
+> **TLDR** Analyzing input data distribution drift helps explain and locate the reasons for model quality drops, as well as notice important changes in the modeled process.
 
 - Evaluating data drift is also a useful technique for model troubleshooting and debugging. If you observe a model quality drop through a direct metric like accuracy, your next step is investigating the underlying cause. This usually boils down to looking for changes in the input data.
 - Data drift analysis helps understand and contextualize the changes in the model features and locate the source. In this scenario, you might **not** use drift detection as an alerting signal – however, you can employ the data drift analysis when debugging.
