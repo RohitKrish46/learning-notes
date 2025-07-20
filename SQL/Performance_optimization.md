@@ -45,6 +45,7 @@
 ## Structured Indexes
 
 ### Clustered Index
+<img width="940" height="624" alt="image" src="https://github.com/user-attachments/assets/9a5e3468-0cc5-465e-a140-8c436ec81bc8" />
 
 - Data is **sorted and stored** according to a column, forming a **B-Tree (Balanced Tree)**.
 - In a clustered index:
@@ -53,6 +54,7 @@
 - Improves read performance by reducing the number of pages scanned.
 
 ### Non-Clustered Index
+<img width="895" height="609" alt="image" src="https://github.com/user-attachments/assets/aabfcbd3-095f-411b-a3ff-8060716a3413" />
 
 - Data remains **unsorted**.
 - A separate **index page** is created with mappings:
@@ -80,7 +82,6 @@
 - Clustered Index: Table of Contents in a book.
 - Non-Clustered Index: Glossary with word-to-page mappings.
 
----
 
 ## Syntax for Creating Indexes
 
@@ -90,10 +91,10 @@ CREATE [CLUSTERED | NONCLUSTERED] INDEX index_name
 ON table_name (col1, col2, col3 ...)
 ```
 
----
-
 ## Composite Indexes
 
+* Use **composite indexes** for frequent filtering on multiple columns.
+* **Left-Most Prefix Rule**: Index is used only if query filters start from the **first column** in the index and follow the defined order.
 ```sql
 -- Composite Index Creation
 CREATE INDEX idx_DBCustomers_CountryScore
@@ -109,9 +110,3 @@ SELECT *
 FROM Sales.DBCustomers
 WHERE Score < 600
 ```
-
-### Notes:
-
-* Use **composite indexes** for frequent filtering on multiple columns.
-* **Left-Most Prefix Rule**: Index is used only if query filters start from the **first column** in the index and follow the defined order.
-
