@@ -59,7 +59,7 @@
 - Data remains **unsorted**.
 - A separate **index page** is created with mappings:
 
-`Primary\_Key -> File ID : Page No : Row Offset`
+`Primary Key -> File ID : Page No : Row Offset`
 
 - This mapping is known as a **Row Identifier (RID)**.
 - The B-Tree's **leaf nodes = index entries**, not data.
