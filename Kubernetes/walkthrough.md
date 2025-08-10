@@ -1,4 +1,4 @@
-# Kubernetes Notes (Beginner-Friendly)
+# Kubernetes Notes
 
 ## What is Kubernetes?
 Kubernetes (often called **K8s**) is an **open-source container orchestration tool** developed by Google.  
