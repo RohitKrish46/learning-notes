@@ -28,4 +28,4 @@ This is a drastic but sometimes necessary option, especially when the model's pr
 
 This action involves making manual adjustments or changes on top of the model's predictions. This is often done when you have specific knowledge about an upcoming event that the model is unaware of.
 
-- **Example:** A company uses a model for demand forecasting. For an upcoming promotional event, an expert can manually adjust the model's forecast to account for the expected increase in sales, as the model would not have this information.
+- **Example:** A company uses a model for demand forecasting. For an upcoming promotional event, an expert can manually adjust the model's forecast to account for the expected increase in sales, as the model would not have this information. 
