@@ -26,7 +26,7 @@ Use one database for multiple data types (relational, graph, document, cache)
 ## How Redis Works
 - **Redis Core:** Key-value store supporting multiple data types
 - **Modules:** Add-on features for specific needs (e.g., Redis Search)
-- **Built-in cache:** No extra cache layer needed
+- **Built-in cache:** No extra cache layer required
 - **Performance:** Super-fast due to in-memory architecture
 
 ## Persistence in Redis
