@@ -1,5 +1,5 @@
 # Redis Overview
-- **Full form:** Remote Dictionary Server
+- **Full form:** Remote Dictionary Server.
 - **Storage:** Data is kept in RAM (in-memory)
 - **Primary use:** Cache to improve performance
 - **Data types:** Can store multiple formats and persist them
