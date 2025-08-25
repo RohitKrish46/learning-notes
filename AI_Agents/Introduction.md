@@ -19,7 +19,8 @@ This part represents **everything the Agent is equipped to do**.
 
 The **scope of possible actions** depends on what the agent **has been equipped with**. For example, because humans lack wings, they can’t perform the “fly” **Action**, but they can execute **Actions** like “walk”, “run” ,“jump”, “grab”, and so on.
 
-![image.png](attachment:55ddb3d2-4caf-4d95-a81a-04b58ab29ade:image.png)
+<img width="871" height="796" alt="image" src="https://github.com/user-attachments/assets/b2b5e89c-61af-4adc-8845-d11a40035abe" />
+
 
 ### **The spectrum of “Agency”**
 
